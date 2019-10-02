@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<app-header (featureSelected)="onNavigate($eve)"></app-header>
+<div class="container">
+	<div class="row" *ngIf="loadedFeature === 'recipe'">
+		<app-recipes></app-recipes>
+	</div>
+
+	<div class="row" *ngIf="loadedFeature !== 'recipe'">
+		<app-shopping-list></app-shopping-list>
+	</div>
+
+</div>
